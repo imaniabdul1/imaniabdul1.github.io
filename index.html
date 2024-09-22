@@ -3,22 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imani Abdul's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Portfolio</title>
+    <style>
+        /* Reset and body styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Didot', serif;
+            background-color: #F7CDD0; /* Ensure background is always this color */
+        }
+
+        /* Styling for the background image */
+        #main-content {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            background-color: #F7CDD0; /* Matching background color */
+        }
+
+        #main-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Style for your name in the corner */
+        header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5em;
+            color: black;
+        }
+
+        /* Main container for sections (Coding Projects, Photography, Artwork) */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #F7CDD0; /* Matching background color */
+        }
+
+        /* Section styling */
+        .section {
+            flex: 1;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .section a {
+            font-size: 4em;
+            text-decoration: none;
+            color: white;
+        }
+
+        .section a:hover {
+            color: #BA8E91;
+            cursor: pointer;
+        }
+
+        /* Sections to scroll down to */
+        #coding-projects,
+        #photography,
+        #artwork {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <div class="cover-page">
-        <div class="left-side">
-            <img src="your-image.jpg" alt="City Image" class="cover-image">
+
+    <!-- Background Image Section -->
+    <section id="main-content">
+        <img src="cover.png" alt="Background Image">
+        <div style="position: absolute; top: 850px; left: 30px; font-size: 20px;">
+            IMANI ABDUL
         </div>
-        <div class="right-side">
-            <h2>Welcome To</h2>
-            <h1>Imani Abdul's Portfolio</h1>
-            <p>
-                Hi! I’m Imani Abdul, a student passionate about blending technology with cultural advocacy, gender equality, and design. I strive to use creativity to solve real-world problems and express my unique perspective. Whether I’m developing innovative apps, creating impactful art, or promoting inclusivity through an array of activities, my goal is to inspire others and make a difference. My work reflects my commitment to pushing boundaries, advocating for diverse voices, and celebrating the beauty of culture and technology.
-            </p>
-            <button class="cta-button">Let's Go!</button>
+    </section>
+
+    <!-- Section with Coding Projects, Photography, and Artwork -->
+    <div class="container">
+        <div class="section">
+            <h2>Coding Projects</h2>
+            <a href="#coding-projects">01</a>
+        </div>
+        <div class="section">
+            <h2>Photography</h2>
+            <a href="#photography">02</a>
+        </div>
+        <div class="section">
+            <h2>Artwork</h2>
+            <a href="#artwork">03</a>
         </div>
     </div>
+
+    <!-- Sections that appear when you scroll down -->
+    <section id="coding-projects">
+        <p>Welcome to my coding projects.</p>
+    </section>
+
+    <section id="photography">
+        <p>Here are my photography works.</p>
+    </section>
+
+    <section id="artwork">
+        <p>Check out my artwork!</p>
+    </section>
+
 </body>
 </html>
