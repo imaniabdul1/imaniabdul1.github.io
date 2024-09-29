@@ -37,6 +37,33 @@
             color: black;
         }
 
+        /* Styling for the "Let's Go!" button */
+        .button-container {
+            position: absolute;
+            top: 100%;
+            right: 15%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #E3A9AD;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Didot', serif;
+        }
+
+        .button-container button:hover {
+            background-color: #AA7F82;
+        }
+        
+        #headers {
+            font-size: 30px;
+        }
+
         /* Main container for sections (Coding Projects, Photography, Artwork) */
         .container {
             display: flex;
@@ -65,35 +92,288 @@
         }
 
         .section a:hover {
-            color: #BA8E91;
+            color: #AA7F82;
             cursor: pointer;
         }
 
-        /* Sections to scroll down to */
-        #coding-projects,
-        #photography,
-        #artwork {
-            height: 100vh;
+        /* Flexbox for project sections */
+        #coding-projects, #ada-budgeting, #victorian-ballroom, #muslim-women, #moth-butterfly {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 50px;
+            text-align: left;
+        }
+
+        /* Text styling for each project */
+        .project-text {
+            flex: 1;
+            font-family: 'Didot', serif;
+            font-size: 16px;
+            padding: 20px;
             color: black;
         }
+
+        /* Styling for project images and videos */
+        .project-image-video {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Image styles for each project */
+        #foliage-image, #adaImage, #victorianImage, #muslimImage, #quizImage {
+            width: 90%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Foliage Finance video styling (unchanged) */
+        #video-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 40%;
+            border: 5px solid #E3A9AD;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* ADA Budgeting App video styling (unchanged) */
+        #ada-video-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: auto;
+            transform: scale(0.6) translate(25px, 20px);
+            transform-origin: top left;
+            z-index: 10;
+            border: 5px solid #E3A9AD;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Victorian Ballroom video styling */
+        #victorian-video-frame {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 45%;
+            height: auto;
+            border: 5px solid #E3A9AD;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Help Muslim Women in India video styling */
+        #muslim-video-frame {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40%;
+            height: auto;
+            border: 5px solid #E3A9AD;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Moth or Butterfly video styling */
+        #quiz-video-frame {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 45%;
+            height: auto;
+            border: 5px solid #E3A9AD;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Photography Section Styling */
+        #photography {
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            padding-left: 100px; /* Add padding to move text more towards the center */
+            background-color: #F7CDD0; /* Matching background color */
+        }
+
+        .photography-content {
+            max-width: 600px; /* Limit text container width */
+        }
+
+        /* Large white title */
+        #photography h2 {
+            font-size: 5em; /* Larger font size */
+            font-family: 'Didot', serif;
+            color: white; /* White text color */
+            margin-bottom: 20px;
+        }
+
+        /* Smaller black paragraph text */
+        #photography p {
+            font-size: 1.3em;
+            color: black; /* Black text color */
+            line-height: 1.6; /* Better line spacing */
+            margin-bottom: 30px; /* Space below paragraph */
+        }
+
+        /* Button styling */
+        .gallery-button {
+            padding: 15px 30px;
+            background-color: #D4A7A9; /* Match button color */
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Didot', serif;
+        }
+
+        .gallery-button:hover {
+            background-color: #C4878A; /* Slightly darker on hover */
+        }
+
+        /* Gallery section below for linking */
+          /* Gallery Section */
+            #gallery {
+                padding: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        .gallery-item {
+            flex: 0 1 auto; /* Allow items to shrink and grow based on image size */
+            margin: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Keep shadow effect */
+            cursor: pointer;
+            transition: transform 0.2s;
+            border-radius: 8px; /* Optional: Maintain rounded borders */
+            overflow: hidden; /* Ensure content fits within borders */
+        }
+
+        .gallery-item img {
+            display: block;
+            max-width: 100%; /* Ensure image fits within the gallery item */
+            max-height: 150px; /* Set a maximum height to control overall size */
+            border-radius: 8px;
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+
+
+            .gallery-item:hover {
+                transform: scale(1.05);
+            }
+
+            /* Modal Styles */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                z-index: 1000;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modal-content {
+                position: relative;
+                width: 70%;
+                background: #F7CDD0;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            }
+
+        .modal-image {
+            width: auto; /* Set width to adjust based on image aspect ratio */
+            max-width: 90%;  /* Limit image width to 90% of the modal width */
+            max-height: 70vh;  /* Limit height to 70% of the viewport height */
+            margin-bottom: 20px;
+            border-radius: 8px;
+            object-fit: contain; /* Maintain image proportions */
+        }
+
+
+            .modal-title {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .modal-description {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            /* Navigation Buttons */
+            .nav-button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #E3A9AD;
+                border: none;
+                color: white;
+                font-size: 24px;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+
+            .nav-button.left {
+                left: 10px;
+            }
+
+            .nav-button.right {
+                right: 10px;
+            }
+
+            .nav-button:hover {
+                background: #AA7F82;
+            }
+
+            /* Close Button */
+            .close-button {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 32px;
+                color: #E3A9AD;
+                cursor: pointer;
+            }
+
+            .close-button:hover {
+                color: #AA7F82;
+            }
+
+        
     </style>
 </head>
 <body>
 
     <!-- Background Image Section -->
     <section id="main-content">
-        <img src="cover.png" alt="Background Image">
-        <div style="position: absolute; top: 850px; left: 30px; font-size: 20px;">
-            IMANI ABDUL
+        <img src="coverPage.png" alt="Background Image">
+     
+        <!-- "Let's Go!" Button -->
+        <div class="button-container">
+            <button onclick="window.location.href='#key-sections'">Let's Go!</button>
         </div>
     </section>
 
-    <!-- Section with Coding Projects, Photography, and Artwork -->
-    <div class="container">
+    <!-- Add an ID to the container with Coding Projects, Photography, and Artwork -->
+    <div class="container" id="key-sections">
         <div class="section">
             <h2>Coding Projects</h2>
             <a href="#coding-projects">01</a>
@@ -102,24 +382,220 @@
             <h2>Photography</h2>
             <a href="#photography">02</a>
         </div>
-        <div class="section">
-            <h2>Artwork</h2>
-            <a href="#artwork">03</a>
-        </div>
+
     </div>
 
-    <!-- Sections that appear when you scroll down -->
+    <!-- Foliage Finance Section -->
     <section id="coding-projects">
-        <p>Welcome to my coding projects.</p>
+        <div class="project-text">
+            <h2 id="headers"><em>"Foliage Finance"</em></h2>
+            <p><strong>iOS App - 2024</strong></p>
+            <p>Foliage Finance is an innovative and engaging financial education platform designed for teenagers, young adults, and those who haven’t received adequate financial education. The app features a budgeting screen to manage expenses, a tax filing simulation with W2 and 1040 forms, and a budgeting game that incorporates real-world financial scenarios. It also includes financial dashboards to track real-life debts, a credit literacy lesson and quiz, and a budgeting quiz. Foliage Finance was recognized as a finalist in the top 4 out of 43 teams in an app competition, highlighting its effectiveness and appeal in empowering users to master personal finance.</p>
+        </div>
+        <div class="project-image-video">
+            <img id="foliage-image" src="foliage.png" alt="Foliage Finance Image">
+            <iframe id="video-frame" src="https://www.youtube.com/embed/aP215I-h6NY?start=261" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- A.D.A Budgeting App Section -->
+    <section id="ada-budgeting">
+        <div class="project-text">
+            <h2 id="headers"><em>"A.D.A Budgeting App"</em></h2>
+            <p><strong>Web App - 2024</strong></p>
+            <p>A budgeting app designed specifically for teenagers and students, featuring a budgeting calendar to track income and expenses, a savings calculator to help set and achieve financial goals, and an array of educational resources on topics like budgeting, saving, and managing money responsibly. The app empowers young users to develop strong financial habits early, offering easy-to-understand tools and tips tailored to their needs, with an emphasis on real-world application and financial literacy.</p>
+        </div>
+        <div class="project-image-video">
+            <img id="adaImage" src="adaImage.png" alt="A.D.A Budgeting App Image">
+            <video id="ada-video-frame" controls>
+                <source src="adaVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Victorian Ballroom Section -->
+    <section id="victorian-ballroom">
+        <div class="project-text">
+            <h2 id="headers"><em>"Victorian Ballroom"</em></h2>
+            <p><strong>Website - 2023</strong></p>
+            <p>A Choose Your Own Adventure (CYOA) game featuring historically accurate choices. about Victorian fashion, ballroom etiquette, and class distinctions. Players will navigate the complex social dynamics of the era, making decisions about attire, behavior, and social interactions to survive a night in the Victorian ballroom.</p>
+        </div>
+        <div class="project-image-video">
+            <img id="victorianImage" src="victorianImage.png" alt="Victorian Ballroom Image">
+            <video id="victorian-video-frame" controls>
+                <source src="victorianVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Help Muslim Women in India Section -->
+    <section id="muslim-women">
+        <div class="project-text">
+            <h2 id="headers"><em>"Help Muslim Women in India"</em></h2>
+            <p><strong>Website - 2022</strong></p>
+            <p>An Activist Website dedicated to shedding light on the challenges and resilience of Muslim women in India. The website serves as an educational resource through detailed articles, multimedia content, and interactive features. The website raises awareness about issues such as discrimination, gender inequality, and religious persecution, while also celebrating the strength and cultural contributions of Muslim women. It encourages users to share resources and participate in advocacy efforts aimed at creating a positive change.</p>
+        </div>
+        <div class="project-image-video">
+            <img id="muslimImage" src="muslimImage.png" alt="Help Muslim Women in India Image">
+            <video id="muslim-video-frame" controls>
+                <source src="muslimVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Are You a Moth or Butterfly Section -->
+    <section id="moth-butterfly">
+        <div class="project-text">
+            <h2 id="headers"><em>"Are You a Moth or a Butterfly?"</em></h2>
+            <p><strong>Website - 2022</strong></p>
+            <p>A personality quiz that uses color preferences, activity levels, and time-of-day habits from answer choices to decide if the user is most like a moth or butterfly.
+</p>
+        </div>
+        <div class="project-image-video">
+            <img id="quizImage" src="quizImage.png" alt="Moth or Butterfly Quiz Image">
+            <video id="quiz-video-frame" controls>
+                <source src="quizVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </section>
 
     <section id="photography">
-        <p>Here are my photography works.</p>
+        <div class="photography-content">
+            <h2>Photography</h2>
+            <p>With my camera in hand, a lens to the world, I capture fleeting moments– the laughter of children on a sunny afternoon or the quiet grace of a stranger lost in thought. These snapshots are my way of seeing beyond the surface, of finding the extraordinary in the ordinary. Through its lens, I document not just images, but emotions, experiences, and the beauty of diversity in everyday life.</p>
+            <button class="gallery-button" onclick="window.location.href='#gallery'">Gallery</button>
+        </div>
     </section>
 
-    <section id="artwork">
-        <p>Check out my artwork!</p>
+    <section id="gallery">
+        <div class="gallery-item" onclick="openModal(0)">
+            <img src="images/holdHand.jpg" alt="Gallery Image 1">
+        </div>
+        <div class="gallery-item" onclick="openModal(1)">
+            <img src="images/concertHug.jpg" alt="Gallery Image 2">
+        </div>
+        <div class="gallery-item" onclick="openModal(2)">
+            <img src="images/ithaca.jpg" alt="Gallery Image 3">
+        </div>
+        <div class="gallery-item" onclick="openModal(3)">
+            <img src="images/concert.jpg" alt="Gallery Image 4">
+        </div>
+        <div class="gallery-item" onclick="openModal(4)">
+            <img src="images/indiana.jpg" alt="Gallery Image 5">
+        </div>
+        <div class="gallery-item" onclick="openModal(5)">
+            <img src="images/relax.jpg" alt="Gallery Image 6">
+        </div>
+        <div class="gallery-item" onclick="openModal(6)">
+            <img src="images/childYell.jpg" alt="Gallery Image 7">
+        </div>
+        <div class="gallery-item" onclick="openModal(7)">
+            <img src="images/momInaya.jpg" alt="Gallery Image 8">
+        </div>
+        <div class="gallery-item" onclick="openModal(8)">
+            <img src="images/mom.jpg" alt="Gallery Image 9">
+        </div>
+        <div class="gallery-item" onclick="openModal(9)">
+            <img src="images/cousins.jpg" alt="Gallery Image 10">
+        </div>
+        <div class="gallery-item" onclick="openModal(10)">
+            <img src="images/surfer.jpg" alt="Gallery Image 11">
+        </div>
+        <div class="gallery-item" onclick="openModal(11)">
+            <img src="images/beach.jpg" alt="Gallery Image 12">
+        </div>
+        <div class="gallery-item" onclick="openModal(12)">
+            <img src="images/grandmaYell.jpg" alt="Gallery Image 13">
+        </div>
+        <div class="gallery-item" onclick="openModal(13)">
+            <img src="images/ducks.jpg" alt="Gallery Image 14">
+        </div>
+        <div class="gallery-item" onclick="openModal(14)">
+            <img src="images/town.jpg" alt="Gallery Image 15">
+        </div>
+        <div class="gallery-item" onclick="openModal(15)">
+            <img src="images/grandmaHug.jpg" alt="Gallery Image 16">
+        </div>
+        <div class="gallery-item" onclick="openModal(16)">
+            <img src="images/childrenWater.jpg" alt="Gallery Image 17">
+        </div>
+        <div class="gallery-item" onclick="openModal(17)">
+            <img src="images/sunset.jpg" alt="Gallery Image 18">
+        </div>
     </section>
+
+
+    <!-- Modal for Image Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img id="modal-image" class="modal-image" src="placeholder1.png" alt="Current Image">
+            <div class="modal-title" id="modal-title">Image Title</div>
+            <div class="modal-description" id="modal-description">Image description goes here...</div>
+            <!-- Navigation Buttons -->
+            <button class="nav-button left" onclick="prevImage()">&#10094;</button>
+            <button class="nav-button right" onclick="nextImage()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Variables and Functions for Gallery
+             const images = [
+                 { src: "images/holdHand.jpg", title: "Threads of Time", description: "Two generations of women intertwine hands." },
+                 { src: "images/concertHug.jpg", title: "In a Crowd, Yet Together", description: "A couple wraps in a quiet embrace as they enjoy a love song." },
+                 { src: "images/ithaca.jpg", title: "Pathway into Serenity", description: "A winding pathway leads to a still forest." },
+                 { src: "images/concert.jpg", title: "A Shimmer in the Spotlight", description: "A guitarist glows as he performs his final song." },
+                 { src: "images/indiana.jpg", title: "Whispers of the Dunes", description: "Tucked away beside the bustling beach, the dunes stand quietly." },
+                 { src: "images/relax.jpg", title: "Afternoon Drift", description: "An office worker drifts to sleep listening to the splashes of the nearby fountain." },
+                 { src: "images/childYell.jpg", title: "Boundless Joy", description: "A young girl prances to her mother across a clover-covered hill." },
+                 { src: "images/momInaya.jpg", title: "A Tale of Two Moods", description: "A mother and daughter - one in peaceful satisfaction, the other lost in thought." },
+                 { src: "images/mom.jpg", title: "A Battle with the Breeze", description: "A woman adorns a grin as the wind wraps around her." },
+                 { src: "images/beach.jpg", title: "Evening on the Shore", description: "A family wades into the shallow waters as the sky dims." },
+                 { src: "images/cousins.jpg", title: "A Frame in Bloom", description: "A family poses amidst a sea of blooming flowers." },
+                 { src: "images/surfer.jpg", title: "Gliding on Waves", description: "A surfer completes his first wave after hours of effort." },
+                 { src: "images/grandmaYell.jpg", title: "Stepping Through Tradition", description: "A woman gently reprimands her granddaughter." },
+                 { src: "images/ducks.jpg", title: "Sunrise Swim", description: "Two ducks enjoy a morning swim, bathing in the day's golden glow." },
+                 { src: "images/town.jpg", title: "A Christmas Town in Summer's Eve", description: "The cozy glows of the lakeside cottages flicker to life." },
+                 { src: "images/grandmaHug.jpg", title: "Wrapped in Embrace", description: "A grandma holds her grandson as she gives her blessings at his wedding." },
+                 { src: "images/childrenWater.jpg", title: "Siblings at the Water's Edge", description: "Two siblings stand at the water’s edge, their reflections gliding over the water." },
+                 { src: "images/sunset.jpg", title: "Sunset Reflections", description: "A mother and son gaze at the peaceful view of a fading sunset." }
+             ];
+
+             let currentIndex = 0;
+
+             function openModal(index) {
+                 currentIndex = index;
+                 document.getElementById("modal-image").src = images[index].src;
+                 document.getElementById("modal-title").textContent = images[index].title;
+                 document.getElementById("modal-description").textContent = images[index].description;
+                 document.getElementById("modal").style.display = "flex";
+             }
+
+             function closeModal() {
+                 document.getElementById("modal").style.display = "none";
+             }
+
+             function nextImage() {
+                 currentIndex = (currentIndex + 1) % images.length;
+                 updateModal();
+             }
+
+             function prevImage() {
+                 currentIndex = (currentIndex - 1 + images.length) % images.length;
+                 updateModal();
+             }
+
+             function updateModal() {
+                 document.getElementById("modal-image").src = images[currentIndex].src;
+                 document.getElementById("modal-title").textContent = images[currentIndex].title;
+                 document.getElementById("modal-description").textContent = images[currentIndex].description;
+             }
+
+    </script>
 
 </body>
 </html>
