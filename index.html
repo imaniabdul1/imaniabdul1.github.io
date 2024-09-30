@@ -168,6 +168,7 @@
             z-index: 10;
         }
 
+
         /* Help Muslim Women in India video styling */
         #muslim-video-frame {
             position: absolute;
@@ -286,16 +287,25 @@
                 justify-content: center;
                 align-items: center;
             }
+        #recipes-gallery {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #F7CDD0; /* Ensure background matches */
+        }
 
-            .modal-content {
-                position: relative;
-                width: 70%;
-                background: #F7CDD0;
-                border-radius: 10px;
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-            }
+
+        .modal-content {
+            position: relative;
+            width: 70%;
+            background: #F7CDD0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
 
         .modal-image {
             width: auto; /* Set width to adjust based on image aspect ratio */
@@ -316,6 +326,7 @@
                 margin: 10px 0;
                 font-size: 16px;
             }
+        
 
             /* Navigation Buttons */
             .nav-button {
@@ -356,6 +367,36 @@
             .close-button:hover {
                 color: #AA7F82;
             }
+        /* Recipes Section Styling */
+        #recipes {
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            padding-left: 100px; /* Add padding to move text more towards the center */
+            background-color: #F7CDD0; /* Matching background color */
+        }
+
+        .recipes-content {
+            max-width: 600px; /* Limit text container width */
+        }
+
+        /* Large white title */
+        #recipes h2 {
+            font-size: 5em; /* Larger font size */
+            font-family: 'Didot', serif;
+            color: white; /* White text color */
+            margin-bottom: 20px;
+        }
+
+        /* Smaller black paragraph text */
+        #recipes p {
+            font-size: 1.3em;
+            color: black; /* Black text color */
+            line-height: 1.6; /* Better line spacing */
+            margin-bottom: 30px; /* Space below paragraph */
+        }
+
 
         
     </style>
@@ -382,6 +423,10 @@
             <h2>Photography</h2>
             <a href="#photography">02</a>
         </div>
+        <div class="section">
+            <h2>Cooking</h2>
+            <a href="#cooking">03</a>
+        </div>
 
     </div>
 
@@ -390,7 +435,7 @@
         <div class="project-text">
             <h2 id="headers"><em>"Foliage Finance"</em></h2>
             <p><strong>iOS App - 2024</strong></p>
-            <p>Foliage Finance is an innovative and engaging financial education platform designed for teenagers, young adults, and those who haven’t received adequate financial education. The app features a budgeting screen to manage expenses, a tax filing simulation with W2 and 1040 forms, and a budgeting game that incorporates real-world financial scenarios. It also includes financial dashboards to track real-life debts, a credit literacy lesson and quiz, and a budgeting quiz. Foliage Finance was recognized as a finalist in the top 4 out of 43 teams in an app competition, highlighting its effectiveness and appeal in empowering users to master personal finance.</p>
+            <p>Foliage Finance is an innovative and engaging financial education platform designed for teenagers, young adults, and those who haven’t received adequate financial education. The app features a budgeting screen to manage expenses, a tax filing simulation with W2 and 1040 forms, and a budgeting game that incorporates real-world financial scenarios. It also includes financial dashboards to track real-life debts, a credit literacy lesson and quiz, and a budgeting quiz. Foliage Finance was recognized as a winning finalist in the top 4 out of 43 teams in an Apple sponsored app competition, highlighting its effectiveness and appeal in empowering users to master personal finance.</p>
         </div>
         <div class="project-image-video">
             <img id="foliage-image" src="foliage.png" alt="Foliage Finance Image">
@@ -596,6 +641,177 @@
              }
 
     </script>
+    <!-- Recipes Section -->
+    <section id="recipes">
+        <div class="recipes-content">
+            <h2>Recipes</h2>
+            <p>I use cooking to express my creativity and passion for design and food by creating my own recipes based off of watching countless cooking shows and videos. Below are some of my favorite recipes I have created over the past few years.</p>
+            <button class="gallery-button" onclick="window.location.href='#recipes-gallery'">View Recipes</button>
+        </div>
+    </section>
+
+    <!-- Recipes Gallery Section -->
+    <section id="recipes-gallery">
+        <!-- 29 Image Placeholders for the Recipes Gallery -->
+        <div class="gallery-item" onclick="openRecipeModal(0)">
+            <img src="recipes/crepe.jpg" alt="Recipe Image 1">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(1)">
+            <img src="recipes/pizza1.jpg" alt="Recipe Image 2">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(2)">
+            <img src="recipes/ramenWithSalad.jpg" alt="Recipe Image 3">
+        </div>
+        <!-- Add 26 more recipe placeholders -->
+        <div class="gallery-item" onclick="openRecipeModal(3)">
+            <img src="recipes/charcuterie2.jpg" alt="Recipe Image 4">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(4)">
+            <img src="recipes/lambPasta.jpg" alt="Recipe Image 5">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(5)">
+            <img src="recipes/toastAndCrepe.jpg" alt="Recipe Image 6">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(6)">
+            <img src="recipes/snapper.jpg" alt="Recipe Image 7">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(7)">
+            <img src="recipes/shrimpPasta.jpg" alt="Recipe Image 8">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(8)">
+            <img src="recipes/cake.jpg" alt="Recipe Image 9">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(9)">
+            <img src="recipes/friedRice.jpg" alt="Recipe Image 10">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(10)">
+            <img src="recipes/charcuterie1.jpg" alt="Recipe Image 11">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(11)">
+            <img src="recipes/seafood.jpg" alt="Recipe Image 12">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(12)">
+            <img src="recipes/shinRamen.jpg" alt="Recipe Image 13">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(13)">
+            <img src="recipes/biryani.jpg" alt="Recipe Image 14">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(14)">
+            <img src="recipes/charcuterie3.jpg" alt="Recipe Image 15">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(15)">
+            <img src="recipes/egg.jpg" alt="Recipe Image 16">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(16)">
+            <img src="recipes/ceaser.jpg" alt="Recipe Image 17">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(17)">
+            <img src="recipes/poptarts.jpg" alt="Recipe Image 18">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(18)">
+            <img src="recipes/steak.jpg" alt="Recipe Image 19">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(19)">
+            <img src="recipes/peachPie.jpg" alt="Recipe Image 20">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(20)">
+            <img src="recipes/noodles.jpg" alt="Recipe Image 21">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(21)">
+            <img src="recipes/jamCookie.jpg" alt="Recipe Image 22">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(22)">
+            <img src="recipes/tomatoToast.jpg" alt="Recipe Image 23">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(23)">
+            <img src="recipes/burrata.jpg" alt="Recipe Image 24">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(24)">
+            <img src="recipes/applePie.jpg" alt="Recipe Image 25">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(25)">
+            <img src="recipes/thanksgiving.jpg" alt="Recipe Image 26">
+        </div>
+        <div class="gallery-item" onclick="openRecipeModal(26)">
+            <img src="recipes/sausagePasta.jpg" alt="Recipe Image 27">
+        </div>
+        
+    </section>
+
+    <!-- Modal for Recipe Details -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeRecipeModal()">&times;</span>
+            <img id="recipe-modal-image" class="modal-image" src="placeholder1.png" alt="Current Recipe Image">
+            <div class="modal-description" id="recipe-modal-description">Recipe description goes here...</div>
+            <!-- Navigation Buttons -->
+            <button class="nav-button left" onclick="prevRecipe()">&#10094;</button>
+            <button class="nav-button right" onclick="nextRecipe()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Variables and Functions for Recipe Gallery
+        const recipeImages = [
+            { src: "recipes/crepe.jpg", description: "Nutella and Strawberry Crepes" },
+            { src: "recipes/pizza1.jpg", description: "Spicy Goat Cheese and Garlic Tomato White Pizza" },
+            { src: "recipes/ramenWithSalad.jpg", description: "Coconut Curry Ramen with Salmon Cucumber Salad" },
+            { src: "recipes/charcuterie2.jpg", description: "Charcuterie Board" },
+            { src: "recipes/lambPasta.jpg", description: "Carbonara Pasta with Lamb and Cucumbers" },
+            { src: "recipes/toastAndCrepe.jpg", description: "Feta Salmon Bagel with Creme Fraiche and Strawberry Crepes" },
+            { src: "recipes/shrimpPasta.jpg", description: "Italian-Indian Inspired Pasta with Curry Shrimp" }, 
+            { src: "recipes/snapper.jpg", description: "Coconut Curry Thai Red Snapper" },
+            { src: "recipes/cake.jpg", description: "The Neapolitan - Chocolate Cake with Vanilla Buttercream and Strawberries" },
+            { src: "recipes/pizza2.jpg", description: "Spicy Olive, Beef Sausage, and Tomato Red Pizza" },
+            { src: "recipes/friedRice.jpg", description: "Chinese Fried Rice with Beef" },
+            { src: "recipes/charcuterie1.jpg", description: "Mini Charcuterie Board" },
+            { src: "recipes/seafood.jpg", description: "Cajun Seafood Boil with Ramen" },            
+            { src: "recipes/shinRamen.jpg", description: "Elevated Shin Ramen" },
+            { src: "recipes/biryani.jpg", description: "Goat Biryani with Raita" },            
+            { src: "recipes/charcuterie3.jpg", description: "Another Charcuterie Board" },            
+            { src: "recipes/egg.jpg", description: "Pickled Onion and Feta Egg with Cottage Cheese and Fruits" },
+            { src: "recipes/ceaser.jpg", description: "Anchovy and Parmesan Caesar Salad" },
+            { src: "recipes/poptarts.jpg", description: "Nutella and Strawberry Poptarts" },
+            { src: "recipes/steak.jpg", description: "Garlic Butter Steak" },
+            { src: "recipes/peachPie.jpg", description: "Peach Cobbler Pie" },
+            { src: "recipes/noodles.jpg", description: "Stir Fry Ramen Noodles" },
+            { src: "recipes/jamCookie.jpg", description: "Strawberry Jam Thumbprint Cookies" },
+            { src: "recipes/tomatoToast.jpg", description: "Goat Cheese, Cherry Tomato, and Honey Toast with Apples" },
+            { src: "recipes/burrata.jpg", description: "Spicy Burrata and Tomato Inspired Caprese Salad" },
+            { src: "recipes/applePie.jpg", description: "Caramel Apple Pie" },
+            { src: "recipes/thanksgiving.jpg", description: "Thanksgiving Meal - Stir-fried Bok Choy, Pad Thai Glass Noodles, Cumin Lamb, Garlic Mushrooms" },
+            { src: "recipes/sausagePasta.jpg", description: "Creamy Cajun Pasta with Chicken Sausage" },
+        ];
+
+        let recipeIndex = 0;
+
+        function openRecipeModal(index) {
+            recipeIndex = index;
+            document.getElementById("recipe-modal-image").src = recipeImages[index].src;
+            document.getElementById("recipe-modal-description").textContent = recipeImages[index].description;
+            document.getElementById("recipe-modal").style.display = "flex";
+        }
+
+        function closeRecipeModal() {
+            document.getElementById("recipe-modal").style.display = "none";
+        }
+
+        function nextRecipe() {
+            recipeIndex = (recipeIndex + 1) % recipeImages.length;
+            updateRecipeModal();
+        }
+
+        function prevRecipe() {
+            recipeIndex = (recipeIndex - 1 + recipeImages.length) % recipeImages.length;
+            updateRecipeModal();
+        }
+
+        function updateRecipeModal() {
+            document.getElementById("recipe-modal-image").src = recipeImages[recipeIndex].src;
+            document.getElementById("recipe-modal-description").textContent = recipeImages[recipeIndex].description;
+        }
+    </script>
+
 
 </body>
 </html>
