@@ -12,7 +12,7 @@
   let w = 0, i = words[0].length, deleting = true;
   function tick() {
     const word = words[w];
-    el.textContent = word.slice(0, i);
+el.textContent = word.slice(0, i) || "\u00A0";
     let delay = deleting ? 45 : 90;
     if (deleting) {
       i--;
