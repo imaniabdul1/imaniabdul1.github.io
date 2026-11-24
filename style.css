@@ -8,14 +8,14 @@
 
 /* ========== Tokens ========== */
 :root {
-  --bg: #F1E9DF;
-  --cream: #FAF5EC;
-  --nav: #EEC0C5;
-  --rose: #B8535F;
-  --rose-dark: #9A3F4B;
-  --rose-soft: #EE9AA6;
-  --ink: #5C4A44;
-  --muted: #9C8A82;
+  --bg: #FBF7F3;
+  --cream: #FFFFFF;
+  --nav: #F3D9DC;
+  --rose: #8E3B4A;
+  --rose-dark: #6E2A37;
+  --rose-soft: #C97B88;
+  --ink: #3B2F2F;
+  --muted: #8A7B76;
 
   --display: "Playfair Display", Georgia, serif;
   --serif: "Libre Caslon Text", Georgia, serif;
