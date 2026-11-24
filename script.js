@@ -12,7 +12,7 @@
   let w = 0, i = words[0].length, deleting = true;
   function tick() {
     const word = words[w];
-el.textContent = word.slice(0, i) || "\u00A0";
+    el.textContent = word.slice(0, i) || "\u00A0"; // non-breaking space keeps the blank anchored when empty
     let delay = deleting ? 45 : 90;
     if (deleting) {
       i--;
@@ -50,89 +50,7 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-// ===== Gallery data =====
-const PHOTOS = [
-  { src: "images/holdHand.jpg", title: "Threads of Time", text: "Two generations of women intertwine hands." },
-  { src: "images/concertHug.jpg", title: "In a Crowd, Yet Together", text: "A couple wraps in a quiet embrace as they enjoy a love song." },
-  { src: "images/ithaca.jpg", title: "Pathway into Serenity", text: "A winding pathway leads to a still forest." },
-  { src: "images/concert.jpg", title: "A Shimmer in the Spotlight", text: "A guitarist glows as he performs his final song." },
-  { src: "images/indiana.jpg", title: "Whispers of the Dunes", text: "Tucked away beside the bustling beach, the dunes stand quietly." },
-  { src: "images/relax.jpg", title: "Afternoon Drift", text: "An office worker drifts to sleep listening to the splashes of the nearby fountain." },
-  { src: "images/childYell.jpg", title: "Boundless Joy", text: "A young girl prances to her mother across a clover-covered hill." },
-  { src: "images/momInaya.jpg", title: "A Tale of Two Moods", text: "A mother and daughter: one in peaceful satisfaction, the other lost in thought." },
-  { src: "images/mom.jpg", title: "A Battle with the Breeze", text: "A woman wears a grin as the wind wraps around her." },
-  { src: "images/cousins.jpg", title: "A Frame in Bloom", text: "A family poses amidst a sea of blooming flowers." },
-  { src: "images/surfer.jpg", title: "Gliding on Waves", text: "A surfer completes his first wave after hours of effort." },
-  { src: "images/beach.jpg", title: "Evening on the Shore", text: "A family wades into the shallow waters as the sky dims." },
-  { src: "images/grandmaYell.jpg", title: "Stepping Through Tradition", text: "A woman gently reprimands her granddaughter." },
-  { src: "images/ducks.jpg", title: "Sunrise Swim", text: "Two ducks enjoy a morning swim, bathing in the day's golden glow." },
-  { src: "images/town.jpg", title: "A Christmas Town in Summer's Eve", text: "The cozy glows of the lakeside cottages flicker to life." },
-  { src: "images/grandmaHug.jpg", title: "Wrapped in Embrace", text: "A grandma holds her grandson as she gives her blessings at his wedding." },
-  { src: "images/childrenWater.jpg", title: "Siblings at the Water's Edge", text: "Two siblings stand at the water’s edge, their reflections gliding over the water." },
-  { src: "images/sunset.jpg", title: "Sunset Reflections", text: "A mother and son gaze at the peaceful view of a fading sunset." }
-];
-
-const RECIPES = [
-  ["crepe", "Nutella and Strawberry Crepes"],
-  ["pizza1", "Spicy Goat Cheese and Garlic Tomato White Pizza"],
-  ["ramenWithSalad", "Coconut Curry Ramen with Salmon Cucumber Salad"],
-  ["charcuterie2", "Charcuterie Board"],
-  ["lambPasta", "Carbonara Pasta with Lamb and Cucumbers"],
-  ["toastAndCrepe", "Feta Salmon Bagel with Crème Fraîche and Strawberry Crepes"],
-  ["snapper", "Coconut Curry Thai Red Snapper"],
-  ["shrimpPasta", "Italian-Indian Inspired Pasta with Curry Shrimp"],
-  ["cake", "The Neapolitan: Chocolate Cake with Vanilla Buttercream and Strawberries"],
-  ["pizza2", "Spicy Olive, Beef Sausage, and Tomato Red Pizza"],
-  ["friedRice", "Chinese Fried Rice with Beef"],
-  ["charcuterie1", "Mini Charcuterie Board"],
-  ["seafood", "Cajun Seafood Boil with Ramen"],
-  ["shinRamen", "Elevated Shin Ramen"],
-  ["biryani", "Goat Biryani with Raita"],
-  ["charcuterie3", "Another Charcuterie Board"],
-  ["egg", "Pickled Onion and Feta Egg with Cottage Cheese and Fruits"],
-  ["ceaser", "Anchovy and Parmesan Caesar Salad"],
-  ["poptarts", "Nutella and Strawberry Pop-Tarts"],
-  ["steak", "Garlic Butter Steak"],
-  ["peachPie", "Peach Cobbler Pie"],
-  ["noodles", "Stir-Fry Ramen Noodles"],
-  ["jamCookie", "Strawberry Jam Thumbprint Cookies"],
-  ["tomatoToast", "Goat Cheese, Cherry Tomato, and Honey Toast with Apples"],
-  ["burrata", "Spicy Burrata and Tomato Caprese Salad"],
-  ["applePie", "Caramel Apple Pie"],
-  ["thanksgiving", "Thanksgiving: Stir-Fried Bok Choy, Pad Thai Glass Noodles, Cumin Lamb, Garlic Mushrooms"],
-  ["sausagePasta", "Creamy Cajun Pasta with Chicken Sausage"]
-].map(([f, t]) => ({ src: `recipes/${f}.jpg`, title: t, text: "" }));
-
-const BLURBS = {
-  photos: "With a camera in hand, I capture fleeting moments: the laughter of children on a sunny afternoon, the quiet grace of a stranger lost in thought. Finding the extraordinary in the ordinary.",
-  recipes: "Cooking is where my love of design meets food. These are original recipes I’ve developed over the past few years, inspired by countless cooking shows and videos."
-};
-
-// ===== Tabs + gallery =====
-const galleryEl = document.getElementById("gallery");
-const blurbEl = document.getElementById("tab-blurb");
-let currentSet = PHOTOS;
-
-function renderGallery(key) {
-  currentSet = key === "photos" ? PHOTOS : RECIPES;
-  blurbEl.textContent = BLURBS[key];
-  galleryEl.innerHTML = "";
-  currentSet.forEach((item, idx) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.setAttribute("aria-label", item.title);
-    b.innerHTML = `<img src="${item.src}" alt="${item.title}" loading="lazy">`;
-    b.addEventListener("click", () => openImage(idx));
-    galleryEl.appendChild(b);
-  });
-}
-document.querySelectorAll(".tab").forEach(tab => {
-  tab.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t === tab));
-    renderGallery(tab.dataset.tab);
-  });
-});
-renderGallery("photos");
+let currentSet = [];
 
 // ===== Modal (images + videos) =====
 const modal = document.getElementById("modal");
