@@ -409,3 +409,11 @@ footer {
   .next, .caret { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ===== Professional polish ===== */
+.hero .intro, .skill p, .project p, .projects-intro { color: var(--ink); }
+.project { --accent: #F6E6E8 !important; }
+.project-panel { border-top: 4px solid var(--rose); }
+.headshot { border-color: var(--nav); background: var(--nav); }
+.section-title, .hero h1, .contact h2 { text-shadow: none; }
+#skills, #contact { background: #F7EEEA; }
