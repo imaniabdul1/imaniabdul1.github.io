@@ -438,3 +438,9 @@ footer {
 .site-card p { font-size: 15px; line-height: 1.6; color: var(--ink); margin: 0 0 20px; flex: 1; }
 .site-card .demo-btn { align-self: flex-start; padding: 11px 18px; font-size: 13px; }
 @media (max-width: 1000px) { .site-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+
+.yt-fallback {
+  display: inline-block; margin-top: 12px;
+  font-family: var(--sans); font-weight: 600; font-size: 13px;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--rose);
+}
