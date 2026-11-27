@@ -84,8 +84,10 @@ function step(d) { imgIndex = (imgIndex + d + currentSet.length) % currentSet.le
 document.querySelectorAll(".demo-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     if (btn.dataset.youtube) {
-      stage.innerHTML = `<iframe src="https://www.youtube.com/embed/${btn.dataset.youtube}&autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="${btn.dataset.title} demo"></iframe>`;
-    } else {
+      const [id, query] = btn.dataset.youtube.split("?");
+      const start = new URLSearchParams(query || "").get("start") || 0;
+      stage.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?start=${start}&autoplay=1&rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="${btn.dataset.title} demo"></iframe>
+        <a class="yt-fallback" href="https://www.youtube.com/watch?v=${id}&t=${start}s" target="_blank" rel="noopener">Trouble playing? Watch on YouTube →</a>`;    } else {
       stage.innerHTML = `<video src="${btn.dataset.video}" controls autoplay playsinline></video>`;
     }
     caption.innerHTML = `<strong>${btn.dataset.title}</strong>`;
