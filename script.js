@@ -109,7 +109,7 @@ document.addEventListener("keydown", e => {
 // ===== Contact form =====
 // GitHub Pages can't process forms, so this opens the visitor's email app with the message filled in.
 // To receive messages without email apps, create a free form at formspree.io and set FORM_ENDPOINT.
-const FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/yourid"
+const FORM_ENDPOINT = "https://formspree.io/f/mdegvadg"; 
 const TO = "iabdul@umich.edu";
 document.getElementById("contact-form").addEventListener("submit", async e => {
   e.preventDefault();
